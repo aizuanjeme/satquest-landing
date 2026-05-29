@@ -43,6 +43,12 @@ export default function Footer() {
       {/* Legal links */}
       <div className="flex items-center gap-5 border-t border-white/5 pt-5">
         <Link
+          to="/events"
+          className="no-underline text-[#7A5DC9] text-[0.78rem] font-semibold hover:text-[#FFF7FF] transition-colors duration-200"
+        >
+          Events
+        </Link>
+        <Link
           to="/terms"
           className="no-underline text-[#7A5DC9] text-[0.78rem] font-semibold hover:text-[#FFF7FF] transition-colors duration-200"
         >

@@ -17,6 +17,7 @@ import { useScrollReveal } from './hooks/useScrollReveal';
 import TournamentPage from './pages/TournamentPage';
 import TermsPage from './pages/TermsPage';
 import PrivacyPage from './pages/PrivacyPage';
+import EventsPage from './pages/EventsPage';
 
 /* ─── Mascot character shown on the side of each page ── */
 // Each snap-page reserves 148px on the mascot side (xl+) so content never overlaps.
@@ -64,6 +65,7 @@ export default function App() {
       <Route path="/tournament" element={<TournamentPage />} />
       <Route path="/terms" element={<TermsPage />} />
       <Route path="/privacy" element={<PrivacyPage />} />
+      <Route path="/events" element={<EventsPage />} />
       <Route path="/*" element={<Landing />} />
     </Routes>
   );
