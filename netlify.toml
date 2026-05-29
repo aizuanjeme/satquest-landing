@@ -10,19 +10,19 @@
 [build.environment]
   NODE_VERSION = "20"
 
-# SPA fallback — lets React Router handle all routes client-side
-[[redirects]]
-  from   = "/*"
-  to     = "/index.html"
-  status = 200
-
-# API proxy — avoids mixed-content errors on HTTPS Netlify.
-# Netlify proxies /api/* to the backend server-side (HTTP is fine here).
+# API proxy — must come BEFORE the SPA catch-all so Netlify matches it first.
+# Netlify forwards /api/* to the backend server-side (no mixed-content in browser).
 [[redirects]]
   from   = "/api/*"
   to     = "http://158.220.127.210:3000/api/:splat"
   status = 200
   force  = true
+
+# SPA fallback — lets React Router handle all client-side routes.
+[[redirects]]
+  from   = "/*"
+  to     = "/index.html"
+  status = 200
 
 ###############################################################################
 # Security + privacy headers
