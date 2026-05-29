@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { avatarIdToSrc } from '../utils/avatar';
 
-const API_BASE = import.meta.env.VITE_API_BASE ?? 'http://localhost:3000/api';
+const API_BASE = import.meta.env.VITE_API_BASE ?? '/api';
 
 function RankBadge({ rank }) {
   const base = 'w-[30px] h-[30px] rounded-full inline-flex items-center justify-center text-[0.78rem] font-black';

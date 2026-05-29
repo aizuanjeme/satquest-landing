@@ -16,6 +16,14 @@
   to     = "/index.html"
   status = 200
 
+# API proxy — avoids mixed-content errors on HTTPS Netlify.
+# Netlify proxies /api/* to the backend server-side (HTTP is fine here).
+[[redirects]]
+  from   = "/api/*"
+  to     = "http://158.220.127.210:3000/api/:splat"
+  status = 200
+  force  = true
+
 ###############################################################################
 # Security + privacy headers
 ###############################################################################

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { avatarIdToSrc } from '../utils/avatar';
 
-const API_BASE = import.meta.env.VITE_API_BASE ?? 'http://localhost:3000/api';
+const API_BASE = import.meta.env.VITE_API_BASE ?? '/api';
 
 const STATIC_FEEDBACK = [
   { username: 'nakamoto_fan', rating: 5, message: 'Finally a game that teaches Bitcoin properly. The lightning challenges are insane — completed 3 levels in one sitting!', avatarId: 'avM7', category: 'gameplay', createdAt: '2026-05-20T10:00:00Z' },
