@@ -17,7 +17,12 @@ export function useScrollReveal() {
           }
         });
       },
-      { threshold: 0.12 }
+      {
+        threshold: 0.04,
+        // Trigger 8% before the element reaches the bottom edge of the viewport
+        // so content is already visible when it snaps into view on mobile.
+        rootMargin: '0px 0px -8% 0px',
+      }
     );
 
     document

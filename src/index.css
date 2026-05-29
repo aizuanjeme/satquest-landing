@@ -56,24 +56,45 @@ body {
 /* ─── Scroll reveal ───────────────────────────────────── */
 .reveal {
   opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transform: translateY(28px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 .reveal.visible { opacity: 1; transform: none; }
 
 .reveal-left {
   opacity: 0;
-  transform: translateX(-60px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transform: translateX(-36px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
 }
 .reveal-left.visible { opacity: 1; transform: none; }
 
 .reveal-right {
   opacity: 0;
-  transform: translateX(60px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transform: translateX(36px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
 }
 .reveal-right.visible { opacity: 1; transform: none; }
+
+/* Mobile: drop the translate, just fade — avoids blank flash on snap scroll */
+@media (max-width: 640px) {
+  .reveal, .reveal-left, .reveal-right {
+    transform: none;
+    opacity: 0;
+    transition: opacity 0.32s ease;
+  }
+  .reveal.visible, .reveal-left.visible, .reveal-right.visible {
+    opacity: 1;
+  }
+}
+
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal-left, .reveal-right {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}
 
 /* ─── Skeleton loader ─────────────────────────────────── */
 .skeleton {
